@@ -373,6 +373,9 @@ video {
 .template1__container {
   position: relative
 }
+.template1__text strong {
+  font-weight: 700
+}
 .template1__graphic {
   max-width: 120rem;
   margin-left: auto;
@@ -1056,9 +1059,6 @@ video {
   .btn_bg-accent span {
     min-height: 3.125rem
   }
-  .template1-card {
-    min-height: 15rem
-  }
   .template1-card__title {
     font-size: 1.5rem
   }
@@ -1076,17 +1076,15 @@ video {
   }
 }
 @media (max-width:47.99875em) {
-  .template1__scheme {
-    display: flex;
-    flex-direction: column-reverse;
-    row-gap: 1rem
+  .template1__text ._content {
+    padding-top: 5.625rem
   }
   .template1__card {
-    display: flex;
-    justify-content: center
+    float: right
   }
   .template1-card {
-    max-width: 13.25rem
+    max-width: 13.25rem;
+    min-height: 15rem
   }
   .template1-card__body {
     padding-left: 1.125rem;
@@ -1317,9 +1315,6 @@ video {
   .btn_bg-accent span {
     min-height: 3.5rem
   }
-  .template1-card {
-    min-height: 17.5rem
-  }
   .template1-card__title {
     font-size: 1.75rem
   }
@@ -1345,9 +1340,6 @@ video {
   }
   .btn_bg-accent span {
     min-height: clamp(3.125rem ,2.7577319588rem + 1.5463917526vw ,3.5rem)
-  }
-  .template1-card {
-    min-height: clamp(15rem ,12.5515463918rem + 10.3092783505vw ,17.5rem)
   }
   .template1-card__title {
     font-size: clamp(1.5rem ,1.2551546392rem + 1.0309278351vw ,1.75rem)
