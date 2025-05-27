@@ -1,0 +1,775 @@
+// .template1     ====================================================================================================
+.template1 {
+  position: relative;
+  background-repeat: repeat-x;
+  background-size: contain;
+  padding-bottom: toRem(40);
+  background-image: url(../img/template1/template1-bg_sm.svg);
+
+  @media (min-width: $mobile) {
+    background-image: url(../img/template1/template1-bg_lg.svg);
+  }
+  @media (min-width: toEm(1800)) {
+    background-image: url(../img/template1/template1-bg_xl.svg);
+  }
+
+  // .template1__container
+  &__container {
+    position: relative;
+  }
+
+  // .template1__scheme
+  &__scheme {
+    @media (min-width: $mobile) {
+      display: grid;
+      align-items: flex-end;
+      @include adaptiveValue("column-gap", 64, 16, 0, 1920, 992);
+      grid-template-columns: 1fr auto;
+    }
+    @media (min-width: $tablet) {
+      grid-template-columns: percent(775, 1280) auto;
+    }
+  }
+
+  // .template1__text
+  &__text {
+    ._content {
+      @media (max-width:$mobile){
+         padding-top: toRem(90); 
+      }
+
+    }
+    strong {
+      font-weight: 700;
+    }
+  }
+
+  // .template1__card
+  &__card {
+    @media (max-width: $mobile) {
+      float: right;
+    }
+  }
+
+  // .template1__graphic
+  &__graphic {
+    max-width: toRem($maxWidth);
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+
+    &:not(:first-child) {
+      @include adaptiveValue("margin-top", 32, 24, 0, 1920, 992);
+    }
+  }
+}
+
+.template1-card {
+  background-image: url(../img/template1/template1-card1-bg.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  display: grid;
+  align-items: flex-end;
+
+  @media (min-width: $mobile) {
+    @include adaptiveValue("max-width", 380, 290, 0, 1920, 992);
+    @include adaptiveValue("min-height", 504, 380, 0, 1920, 992);
+  }
+  @media (max-width: $mobile) {
+    max-width: toRem(212);
+    min-height: toRem(240);
+    // @include adaptiveValue("min-height", 280, 240, 0, 768, 380);
+  }
+
+  // .template1-card__body
+  &__body {
+    display: grid;
+    align-content: flex-start;
+    text-align: center;
+    color: $White;
+    padding: toRem(40) toRem(26);
+    @include adaptiveValue("padding-bottom", 40, 24, 0, 1920, 992);
+
+    @media (min-width: $mobile) {
+      @include adaptiveValue("row-gap", 12, 4, 0, 1920, 380);
+    }
+    @media (max-width: $mobile) {
+      padding-left: toRem(18);
+      padding-right: toRem(18);
+    }
+  }
+
+  // .template1-card__title
+  &__title {
+    font-weight: 700;
+
+    @media (min-width: $mobile) {
+      @include adaptiveValue("font-size", 46, 32, 0, 1920, 768);
+    }
+    @media (max-width: $mobile) {
+      @include adaptiveValue("font-size", 28, 24, 0, 768, 380);
+    }
+  }
+
+  // .template1-card__subtitle
+  &__subtitle {
+    font-weight: 400;
+
+    @media (min-width: $mobile) {
+      @include adaptiveValue("font-size", 28, 20, 0, 1920, 768);
+    }
+    @media (max-width: $mobile) {
+      @include adaptiveValue("font-size", 18, 15, 0, 768, 380);
+    }
+  }
+}
+
+// .template2     ====================================================================================================
+.template2 {
+  // .template2__container
+  &__container {
+  }
+
+  // .template2__scheme
+  &__scheme {
+    @media (min-width: $mobile) {
+      display: grid;
+      align-items: center;
+      @include adaptiveValue("column-gap", 64, 16, 0, 1920, 992);
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: $mobile) {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: toRem(24);
+    }
+  }
+
+  // .template2__body
+  &__body {
+    display: grid;
+    align-content: flex-start;
+    row-gap: toRem(20);
+  }
+
+  // .template2__title
+  &__title {
+    color: $Accent;
+
+    @media (max-width: $mobileM) {
+      max-width: toRem(280);
+    }
+
+    span {
+      @media (max-width: $mobile) {
+        color: #545454;
+      }
+    }
+  }
+
+  // .template2__text
+  &__text {
+  }
+
+  // .template2__media
+  &__media {
+    @media (min-width: $mobile) {
+      display: grid;
+      align-content: flex-start;
+      justify-items: center;
+      gap: toRem(24);
+    }
+    @media (min-width: $mobileM) and (max-width: $mobile) {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      gap: toRem(8);
+    }
+    @media (max-width: $mobileM) {
+      position: relative;
+    }
+  }
+
+  // .template2__image
+  &__image {
+    @media (max-width: $mobileM) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      pointer-events: none;
+      @include adaptiveValue("max-width", 280, 140, 0, 575, 380);
+    }
+  }
+
+  // .template2__audio
+  &__audio {
+    @media (max-width: $mobile) {
+      display: grid;
+      align-content: flex-start;
+      row-gap: toRem(20);
+      position: relative;
+      z-index: 1;
+    }
+  }
+}
+
+// .template3     ====================================================================================================
+.template3 {
+  background-image: url(../img/template3/template3-bg_xs.svg);
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: toRem(380) toRem(250);
+  min-height: toRem(250);
+
+  @media (min-width: $mobileM) {
+    background-size: contain;
+    background-image: url(../img/template3/template3-bg_sm.svg);
+  }
+  @media (min-width: $mobile) {
+    background-image: url(../img/template3/template3-bg_md.svg);
+    @include adaptiveValue("padding-top", 180, 100, 0, 1920, 768);
+    @include adaptiveValue("padding-bottom", 180, 100, 0, 1920, 768);
+  }
+  @media (min-width: $tablet) {
+    background-size: toRem(992) toRem(406);
+  }
+  @media (min-width: toEm(1280)) {
+    background-size: contain;
+    background-image: url(../img/template3/template3-bg_lg.svg);
+  }
+  @media (min-width: toEm(1650)) {
+    background-image: url(../img/template3/template3-bg_xl.svg);
+    background-size: toRem(1920) toRem(571);
+  }
+  @media (max-width: $mobile) {
+    @include adaptiveValue("padding-top", 100, 50, 0, 768, 380);
+    @include adaptiveValue("padding-bottom", 100, 50, 0, 768, 380);
+  }
+
+  // .template3__container
+  &__container {
+    text-align: center;
+  }
+
+  // .template3__title
+  &__title {
+    color: #545454;
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 40, 24, 0, 1920, 768);
+    }
+
+    span {
+      display: block;
+      color: $White;
+    }
+  }
+
+  // .template3__button
+  &__button {
+  }
+}
+
+// .template4     ====================================================================================================
+.template4 {
+  // .template4__container
+  &__container {
+  }
+
+  // .template4__title
+  &__title {
+    color: #545454;
+    text-align: center;
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 40, 24, 0, 1920, 768);
+    }
+
+    span {
+      display: block;
+      color: $Accent;
+    }
+  }
+
+  // .template4__items
+  &__items {
+    display: grid;
+    gap: toRem(44);
+
+    @media (min-width: $mobileSmall) {
+      grid-template-columns: repeat(2, 1fr);
+      @include adaptiveValue("gap", 32, 8, 0, 768, 480);
+    }
+    @media (min-width: $mobile) {
+      grid-template-columns: 1fr percent(462, 1280) 1fr;
+      @include adaptiveValue("gap", 16, 8, 0, 992, 768);
+    }
+    @media (min-width: $tablet) {
+      @include adaptiveValue("gap", 32, 16, 0, 1650, 1280);
+      @include adaptiveValue("padding-top", 95, 82, 0, 1650, 1280);
+    }
+    @media (max-width: $mobileSmall) {
+      padding-top: toRem(52);
+    }
+  }
+
+  // .template4__item
+  &__item {
+    &:nth-child(2n) {
+      @media (min-width: $mobile) {
+        .template4-item__wrapper {
+          background: linear-gradient(0deg, #f2f2f2 0%, #fbfbfb 80%, #fff 100%);
+          color: #545454;
+        }
+
+        .template4-item__body {
+          border-color: #545454;
+        }
+      }
+      @media (max-width: $mobileSmall) {
+        .template4-item__wrapper {
+          background: linear-gradient(0deg, #f2f2f2 0%, #fbfbfb 80%, #fff 100%);
+          color: #545454;
+        }
+
+        .template4-item__body {
+          border-color: #545454;
+        }
+      }
+    }
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(6) {
+      @media (min-width: $mobileSmall) and (max-width: $mobile) {
+        .template4-item__wrapper {
+          background: linear-gradient(0deg, #f2f2f2 0%, #fbfbfb 80%, #fff 100%);
+          color: #545454;
+        }
+
+        .template4-item__body {
+          border-color: #545454;
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      .template4-item__wrapper {
+        @media (min-width: $tablet) and (max-width: toEm(1279.98)) {
+          min-height: toRem(360);
+        }
+      }
+      .template4-item__image {
+        @media (min-width: $tablet) {
+          transform: translateY(percent(-95, 375));
+          @include adaptiveValue("max-width", 406, 350, 0, 1650, 1280);
+        }
+        @media (max-width: $mobileSmall) {
+          transform: translateY(percent(-48, 222));
+        }
+      }
+      .template4-item__main {
+        @media (min-width: $tablet) {
+          margin-top: toRem(-88);
+        }
+        @media (min-width: toEm(1280)) {
+          @include adaptiveValue("margin-top", -95, -82, 0, 1650, 1280);
+        }
+        @media (max-width: $mobileSmall) {
+          margin-top: toRem(-48);
+        }
+      }
+    }
+
+    &:nth-child(5) {
+      .template4-item__wrapper {
+        @media (min-width: $tablet) {
+          min-height: toRem(296);
+        }
+        @media (min-width: toEm(1280)) {
+          @include adaptiveValue("min-height", 328, 276, 0, 1650, 1280);
+        }
+      }
+
+      .template4-item__image {
+        @include adaptiveValue("max-width", 420, 350, 0, 1650, 1280);
+
+        @media (min-width: $tablet) {
+          transform: translateY(percent(-48, 250));
+        }
+        @media (max-width: $mobileSmall) {
+          transform: translateY(percent(-40, 108));
+        }
+      }
+
+      .template4-item__main {
+        @media (min-width: $tablet) {
+          margin-top: toRem(-38);
+        }
+        @media (min-width: toEm(1280)) {
+          @include adaptiveValue("margin-top", -56, -48, 0, 1650, 1280);
+        }
+        @media (max-width: $mobileSmall) {
+          margin-top: toRem(-40);
+        }
+      }
+    }
+
+    &:nth-child(1),
+    &:nth-child(3) {
+      .template4-item__wrapper {
+        @media (min-width: $tablet) {
+          min-height: toRem(296);
+        }
+        @media (min-width: toEm(1280)) {
+          @include adaptiveValue("min-height", 320, 270, 0, 1650, 1280);
+        }
+      }
+
+      .template4-item__image {
+        @include adaptiveValue("max-width", 320, 240, 0, 1650, 1280);
+
+        @media (min-width: $tablet) {
+          transform: translateY(percent(-64, 266));
+        }
+        @media (max-width: $mobileSmall) {
+          transform: translateY(percent(-52, 187));
+        }
+      }
+
+      .template4-item__main {
+        @media (min-width: $tablet) {
+          margin-top: toRem(-55);
+        }
+        @media (min-width: toEm(1280)) {
+          @include adaptiveValue("margin-top", -64, -49, 0, 1650, 1280);
+        }
+        @media (max-width: $mobileSmall) {
+          margin-top: toRem(-52);
+        }
+      }
+    }
+
+    &:nth-child(4),
+    &:nth-child(6) {
+      .template4-item {
+        @media (min-width: $tablet) {
+          @include adaptiveValue("margin-top", -52, -64, 0, 1650, 1280);
+        }
+      }
+
+      .template4-item__wrapper {
+        @media (min-width: $tablet) {
+          min-height: toRem(360);
+        }
+        @media (min-width: toEm(1280)) {
+          @include adaptiveValue("min-height", 380, 340, 0, 1650, 1280);
+        }
+      }
+
+      .template4-item__image {
+        @include adaptiveValue("max-width", 380, 280, 0, 1650, 1280);
+      }
+    }
+  }
+}
+
+.template4-item {
+  @media (max-width: $tablet) {
+    height: 100%;
+  }
+  @media (max-width: $mobileSmall) {
+    max-width: toRem(265);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  // .template4-item__wrapper
+  &__wrapper {
+    background-color: $Accent;
+    color: $White;
+    border-radius: toRem(16);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.45);
+    display: flex;
+    flex-direction: column;
+    padding-bottom: toRem(24);
+    @include adaptiveValue("padding-left", 28, 12, 0, 1650, 1280);
+    @include adaptiveValue("padding-right", 28, 12, 0, 1650, 1280);
+
+    @media (max-width: $tablet) {
+      padding-top: toRem(16);
+      height: 100%;
+    }
+  }
+
+  // .template4-item__image
+  &__image {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+
+    &:not(:last-child) {
+      margin-bottom: toRem(16);
+    }
+  }
+
+  // .template4-item__main
+  &__main {
+    display: grid;
+    align-items: flex-end;
+  }
+
+  // .template4-item__body
+  &__body {
+    border-left: toRem(3) solid $White;
+    padding-left: toRem(8);
+
+    @media (min-width: $tablet) {
+      padding-left: toRem(12);
+      border-width: toRem(5);
+    }
+  }
+
+  // .template4-item__caption
+  &__caption {
+    font-weight: 700;
+
+    @media (min-width: $mobile) {
+      @include adaptiveValue("font-size", 24, 20, 0, 992, 768);
+    }
+    @media (max-width: $mobile) {
+      @include adaptiveValue("font-size", 20, 18, 0, 768, 380);
+    }
+  }
+
+  // .template4-item__text
+  &__text {
+    @include adaptiveValue("font-size", 20, 16, 0, 992, 768);
+  }
+}
+
+// .template5     ====================================================================================================
+.template5 {
+  background-image: url(../img/template5/template5-bg_sm.svg);
+  background-repeat: repeat-x;
+  background-size: contain;
+  @include adaptiveValue("padding-top", 100, 40, 0, 1920, 1650);
+  @include adaptiveValue("padding-bottom", 100, 40, 0, 1920, 1650);
+
+  @media (min-width: $mobile) {
+    background-image: url(../img/template5/template5-bg_lg.svg);
+  }
+  @media (min-width: toEm(1650)) {
+    background-image: url(../img/template5/template5-bg_xl.svg);
+  }
+
+  // .template5__container
+  &__container {
+  }
+
+  // .template5__slider
+  &__slider {
+    padding: toRem(16);
+    margin: toRem(-16);
+    position: relative;
+
+    .swiper-arrow {
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      flex: 0 0 toRem(29);
+      width: toRem(29);
+      height: toRem(29);
+      background: url(../img/icons/swiper-arrow.svg) no-repeat center/contain;
+
+      &:not(.swiper-button-disabled) {
+        cursor: pointer;
+      }
+
+      &_prev {
+        left: 0;
+        transform: rotate(180deg) translateY(50%);
+
+        @media (min-width: $mobile) and (max-width: $tablet) {
+          @include adaptiveValue("left", 24, 16, 0, 992, 768);
+        }
+        @media (min-width: toEm(1280)) {
+          left: toRem(24);
+        }
+        @media (max-width: $mobileM) {
+          @include adaptiveValue("left", 32, 0, 0, 575, 380);
+        }
+      }
+
+      &_next {
+        right: toRem(0);
+        transform: translateY(-50%);
+
+        @media (min-width: $mobile) and (max-width: $tablet) {
+          @include adaptiveValue("right", 24, 16, 0, 992, 768);
+        }
+        @media (min-width: toEm(1280)) {
+          right: toRem(24);
+        }
+        @media (max-width: $mobileM) {
+          @include adaptiveValue("right", 32, 0, 0, 575, 380);
+        }
+      }
+    }
+  }
+
+  // .template5__wrapper
+  &__wrapper {
+  }
+
+  // .template5__slide
+  &__slide {
+  }
+}
+
+.review-card {
+  // .review-card__wrapper
+  &__wrapper {
+    border-radius: toRem(18);
+    box-shadow: 0 7px 9px 0 rgba(0, 0, 0, 0.2);
+    background: radial-gradient(48.49% 51.58% at 50.92% 49.51%, rgb(245, 192, 123) 0%, rgb(245, 196, 132) 17.000000178813934%, rgb(247, 209, 158) 46.00000083446503%, rgb(250, 230, 201) 82.99999833106995%, rgb(252, 241, 223) 100%);
+    position: relative;
+    padding: toRem(40) toRem(24);
+    @include adaptiveValue("padding-left", 24, 16, 0, 1280, 992);
+    @include adaptiveValue("padding-right", 24, 16, 0, 1280, 992);
+    @include adaptiveValue("padding-bottom", 40, 24, 0, 1650, 1280);
+  }
+
+  // .review-card__label
+  &__label {
+    background-color: #ffa451;
+    color: $White;
+    position: absolute;
+    top: 0;
+    right: toRem(20);
+    border-radius: 0 0 toRem(16) toRem(16);
+    padding: toRem(12) toRem(6) toRem(4);
+    text-align: center;
+  }
+
+  // .review-card__label-subtitle
+  &__label-subtitle {
+    font-weight: 400;
+    font-size: toRem(8);
+    letter-spacing: 0.28em;
+  }
+
+  // .review-card__label-title
+  &__label-title {
+    font-weight: 900;
+    font-size: toRem(12);
+  }
+
+  // .review-card__main
+  &__main {
+  }
+}
+
+.review-main {
+  border-radius: toRem(18);
+  max-width: toRem(292);
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding-top: toRem(130);
+
+  @media (min-width: $mobileM) {
+    @include adaptiveValue("padding-top", 130, 100, 0, 708, 575);
+  }
+  @media (min-width: $tablet) {
+    @include adaptiveValue("padding-top", 130, 121, 0, 1064, 992);
+  }
+
+  // .review-main__image
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  // .review-main__wrapper
+  &__wrapper {
+    position: relative;
+    padding: toRem(8) toRem(24) toRem(24);
+    background-color: $White;
+    border-radius: 0 0 toRem(18) toRem(18);
+    @include adaptiveValue("padding-left", 24, 16, 0, 1650, 1280);
+    @include adaptiveValue("padding-right", 24, 16, 0, 1650, 1280);
+  }
+
+  // .review-main__heading
+  &__heading {
+    margin-top: toRem(-20);
+
+    &:not(:last-child) {
+      margin-bottom: toRem(12);
+    }
+  }
+
+  // .review-main__name
+  &__name {
+    font-weight: 400;
+    font-size: toRem(20);
+    color: #2d2d2d;
+  }
+
+  // .review-main__pos
+  &__pos {
+    font-weight: 300;
+    font-size: toRem(12);
+    color: #878686;
+  }
+
+  // .review-main__body
+  &__body {
+    font-size: toRem(14);
+
+    & > * {
+      margin-top: toRem(0);
+      margin-bottom: toRem(0);
+    }
+  }
+}
+
+// .template6     ====================================================================================================
+.template6 {
+  @include adaptiveValue("padding-top", 100, 40, 0, 1920, 1650);
+  @include adaptiveValue("padding-bottom", 100, 40, 0, 1920, 1650);
+
+  // .template6__container
+  &__container {
+  }
+
+  // .template6__title
+  &__title {
+    color: #545454;
+    text-align: center;
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 40, 24, 0, 1920, 768);
+    }
+
+    span {
+      display: block;
+      color: $Accent;
+    }
+  }
+
+  // .template6__button
+  &__button {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+//====================================================================================================
